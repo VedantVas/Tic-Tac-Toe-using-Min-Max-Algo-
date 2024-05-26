@@ -7,12 +7,12 @@ This repository contains a Python implementation of the classic Tic Tac Toe game
 # 3. Minimax Algorithm: AI uses the Minimax algorithm to make optimal moves.
 # 4. User-Friendly Interface: Clear text-based interface to guide the players.
 # How to Play
-Single Player Mode
+# Single Player Mode
 1.Run the script.
 2.Choose Single Player mode by entering 1.
 3.Choose whether to play first or second.
 4.Follow the prompts to make your moves by entering positions (1-9).
-Multiplayer Mode
+# Multiplayer Mode
 1.Run the script.
 2.Choose Multiplayer mode by entering 2.
 3.Take turns to enter positions (1-9) to place your marks on the board.
