@@ -1,48 +1,46 @@
 ##This is tic tac toe gaming using min max algorithm of AI.
-def analyzeboard(board):#is a function that will analyse the board and returns value
+def analyzeboard(board):
     c =[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
 
-#here c is a list of lists which contains the winning conditions of the game,there 
-#are 8 winning condition in total,index 0,1,2 are horizontal ,index 3,4,5 are vertical 
-#whereas 6,7 are diagonal conditions 
+ 
     for i in range(0, 8):
         if (board[c[i][0]]!=0 and
             board[c[i][0]]==board[c[i][1]] and
             board[c[i][1]]==board[c[i][2]]):
-            return board[c[i][0]]#it will return the winner player 
+            return board[c[i][0]]
     return 0
 
-def constboard(board):#this function will create the  board for us 
+def constboard(board):
     print("The current state of the board: \n\n")
     for i in range(0,9):
-        if((i!=0)and(i%3==0)):#here we are creating the spaces,
-            # by using newline after every 3 blocks
+        if((i!=0)and(i%3==0)):
+           
             print("\n")
-        if(board[i]==0):#here it will provide blank space with "_",
-            # so that it become clear for us to note whether it is filled or not
+        if(board[i]==0):
+          
             print("_",end=" ")
-        if(board[i]==-1):#this will assign "X" in the board as per player 1's move
+        if(board[i]==-1):
             print("X",end=" ")
-        if(board[i]==1):#this will assign "O" in the board as per player 2's move
+        if(board[i]==1):
             print("O",end=" ") 
 
     print("\n\n") 
 
-def User1Turn(board):#this function is made for user 1 to do their's move 
+def User1Turn(board):
     pos=int(input("Enter 'X'in between pos[1-9]"))
-    if(board[pos-1]!=0):#checking whether the position player has entered is empty or exist inside our game
-        print("Wrong Move..")
-        exit(0)#this will end the game 
-    board[pos-1]=-1#it will assign the player 1's move in the board 
-
-def User2Turn(board):#this function is made for user 2 to do their's move 
-      pos=int(input("Enter 'O'in between pos[1-9]"))
-      if(board[pos-1]!=0):#again as done in  user1's turn checking board
+    if(board[pos-1]!=0):
         print("Wrong Move..")
         exit(0)
-      board[pos-1]=1#after everything is satisfied it will assign user2's move in board
+    board[pos-1]=-1
 
-#now we wil make the main function 
+def User2Turn(board): 
+      pos=int(input("Enter 'O'in between pos[1-9]"))
+      if(board[pos-1]!=0):
+        print("Wrong Move..")
+        exit(0)
+      board[pos-1]=1
+
+
 def minmax(board,player):
    x=analyzeboard(board)
    if(x!=0):
@@ -77,7 +75,7 @@ def compturn(board):
 
 def main():
     choice=int(input("Enter 1 for Single Player or 2 for Multiplayer:")) 
-    board=[0,0,0,0,0,0,0,0,0]#it represents the turns of the game 
+    board=[0,0,0,0,0,0,0,0,0]
     if(choice==1):
         print("Computer 'O' vs you'X':")
         player=int(input("Enter 1 to play 1st or 2 to 2nd:"))
